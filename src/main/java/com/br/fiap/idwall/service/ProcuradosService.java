@@ -21,4 +21,9 @@ public class ProcuradosService {
                 .toList();
     }
 
+    public List<Procurados> buscarPorParteDoNome(String parteDoNome) {
+        List<Procurados> resultados = repository.findByNomeContaining(parteDoNome);
+        return resultados;
+    }
+
 }

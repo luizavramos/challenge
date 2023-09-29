@@ -1,8 +1,8 @@
 package com.br.fiap.idwall.controller;
 
+import com.br.fiap.idwall.model.Procurados;
 import com.br.fiap.idwall.service.ProcuradosService;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -22,4 +22,11 @@ public class ProcuradosController {
             @RequestParam("parteDoNome") String parteDoNome){
         return service.buscarUrlPorParteDoNome(parteDoNome);
     }
+
+    @GetMapping("/all")
+    public List<Procurados> buscaPorParteDoNome(
+            @RequestParam("parteDoNome") String parteDoNome){
+        return service.buscarPorParteDoNome(parteDoNome);
+    }
+
 }
